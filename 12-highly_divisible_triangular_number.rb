@@ -32,9 +32,9 @@ def triangle_number(num)
   (1..num).inject(&:+)
 end
 
-def solution 
+def triangle_number_with_over_x_factors(x) 
   start=1
-  while number_factors(triangle_number(start)) <=500
+  while number_factors(triangle_number(start)) <=x
     start+=1
     puts  "#{number_factors(triangle_number(start))} : #{triangle_number(start)}"
   end
