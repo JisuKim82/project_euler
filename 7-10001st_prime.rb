@@ -17,11 +17,14 @@ def prime?(x)
 end
 
 
-prime_numbers=[2,3,5,7,11,13]
+def xth_prime_number(xth)
+  prime_numbers=[]
+  x=2
 
+  until prime_numbers.length ==xth
+    p prime_numbers<<x if prime?(x)
+    x+=1
+  end
+  prime_numbers.last
 
-(14..10000000000).each do |x|
-  p prime_numbers<<x if prime?(x)
-  return prime_numbers.last if prime_numbers.length==10001
 end
-
