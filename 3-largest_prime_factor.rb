@@ -7,9 +7,11 @@
 
 require 'prime'
 
-largest_primes_array=Prime.first(5000).reverse
+def largest_prime(x)
+  largest_primes_array=Prime.first(5000).reverse
 
-largest_primes_array.each do |prime|
+  largest_primes_array.each do |prime|
   #p prime
-  return p prime if 600851475143%prime == 0
+  return prime if x%prime == 0
+  end
 end
