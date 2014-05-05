@@ -14,3 +14,19 @@ def sum_divisors(num)
   end
   divisors.inject(&:+)
 end
+
+
+def amicable_numbers_sum(num)
+  results=[]
+  (2..num).each do |x|
+    results<<[x,sum_divisors(x)] 
+  end
+
+  comparison=[]
+  results.each do |arr|
+    comparison<<[arr[1],arr[0]] unless arr[1]==arr[0]
+  end
+
+  results.select{|arr| comparison.include?(arr)}.flatten.inject(&:+)/2
+
+end
