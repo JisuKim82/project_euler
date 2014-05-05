@@ -22,6 +22,9 @@ describe '#find_sum' do
     it 'returns 27 when 10 is passed in' do
       expect(find_sum(10)).to eq 27
     end
-    
+
+    it 'returns 648 when 100 is passed in' do
+      expect(find_sum(100)).to eq 648
+    end
   end
 end
