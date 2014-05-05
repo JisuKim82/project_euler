@@ -13,3 +13,12 @@ describe '#sum_divisors' do
     end
   end
 end
+
+describe '#amicable_numbers_sum' do
+  
+  context 'sums all amicable numbers under the value passed in' do
+    it 'returns 284+220 when 284 is passed in' do
+      expect(amicable_numbers_sum(284)).to eq 504
+    end
+  end
+end
