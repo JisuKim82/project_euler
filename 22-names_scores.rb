@@ -6,7 +6,9 @@
 
 # What is the total of all the name scores in the file?
 
-names = File.read('22-names_scores_names.txt').gsub(/"|\n/,'').split(',').sort
+def normalize
+  names = File.read('22-names_scores_names.txt').gsub(/"|\n/,'').split(',').sort
+end
 
 def name_value(name)
   points=0
@@ -75,4 +77,4 @@ def total_points(array)
   total
 end
 
-puts total_points(names)
+puts total_points(normalize)

@@ -1,6 +1,13 @@
 require_relative 'spec_helper'
 require_relative '../22-names_scores'
 
+describe '#normalize' do
+  context 'parse txt file and returns an array of alphabetized names' do
+    it 'returns array that is sorted alphabetically'
+    
+  end
+end
+
 describe '#name_value' do
   context 'calculates the point value of a name' do
     it 'returns 53 when "COLIN" is passed in' do
