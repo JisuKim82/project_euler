@@ -11,7 +11,7 @@
 #until true -> increment value and check if divisible by 1to20
 
 def divisible?(number)
-  [2,3,5,7,11,13,17,19].each do |x|
+  (1..20).each do |x|
     return false if number % x != 0
   end
   true
