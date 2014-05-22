@@ -54,15 +54,24 @@ values = <<monkey
 monkey
 
 resulting_array=values.gsub("\n","").split(//).map{|x|x.to_i}
-x=0
-max=resulting_array.inject(:*)
 
-while 4+x<resulting_array.length-1
-  max = resulting_array[0+x..4+x].inject(:*) if resulting_array[0+x..4+x].inject(:*) > max
-  x+=1
+
+(0..987).each do |x|
+  max = resulting_array[0+x..12+x].inject(:*) if resulting_array[0+x..12+x].inject(:*) > max
 end
 
 max
+
+#Solution 2 using slice method
+# values = values.split(/\n/).join
+# max13 = 0
+
+# (0..987).each do |i|
+#   if values.slice(i,13).split('').map{|x| x.to_i}.inject(:*)>max13 
+#     max13 = values.slice(i,13).split('').map{|x| x.to_i}.inject(:*)
+#   end  
+# end
+# max13
 
 
 
