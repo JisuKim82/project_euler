@@ -20,6 +20,31 @@
 // if value is odd (3n+1)
 // keep count
 
+(function numWithLongestCollatz(){
+  function countOfCollatzSequence(num){
+    var count =1;
+    while(num!=1){
+      if(num%2==0){
+        num=num/2;
+        count++;
+      }
+      else{
+        num=3*num+1;
+        count++;
+      }
+    }
+    return count;
+  }
 
+  var result=0;
+  var terms=0;
+  for(var i=1; i<1000000; i++){
+    if(countOfCollatzSequence(i)>terms){
+      terms = countOfCollatzSequence(i);
+      result = i;
+    }
+  }
+  return result;
+})();
 
 
