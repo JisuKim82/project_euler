@@ -24,21 +24,50 @@
 
 #return number with the highest counter value
 
-results=Hash.new
+#solution 1
+# results=Hash.new
 
-(1..1000000).each do |x|
-  counter=0
-  num=x
-  until x==1
+# (1..1000000).each do |x|
+#   counter=0
+#   num=x
+#   until x==1
+#     if x.even?
+#       x=x/2
+#       counter+=1
+#     else
+#       x=3*x+1
+#       counter+=1
+#     end
+#   end
+#   results[num]=counter
+# end
+
+# results.sort_by{|k,v| v}.last[0]
+
+
+################solution 2############
+def collatz_count(x)
+  count = 1
+  while x!=1 
     if x.even?
       x=x/2
-      counter+=1
+      count+=1
     else
       x=3*x+1
-      counter+=1
+      count+=1
     end
   end
-  results[num]=counter
+  count
 end
 
-results.sort_by{|k,v| v}.last[0]
+def num_with_largest_sequence
+  count = 0
+  value =0
+  (2...1000000).each do |n|
+    if collatz_count(n) > count
+      count = collatz_count(n) 
+      p value = n
+    end
+  end
+  value
+end
