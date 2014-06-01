@@ -12,12 +12,14 @@
 # Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
 
 
-numbers = []
+def sum_of_powers(n)
+  numbers = []
 
-(2..1000000).each do |x|
-  sum_of_powers = x.to_s.split('').map{|i| i.to_i**5}.inject(:+)
-  if sum_of_powers == x
-    p numbers << sum_of_powers
+  (2..1000000).each do |x|
+    sum_of_powers = x.to_s.split('').map{|i| i.to_i**n}.inject(:+)
+    if sum_of_powers == x
+      p numbers << sum_of_powers
+    end
   end
+  numbers.inject(:+)
 end
-numbers.inject(:+)
