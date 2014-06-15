@@ -26,4 +26,19 @@ def circular_numbers(x)
   results
 end
 
+def prime?(number)
+  (2...number).each do |x|
+    return false if number % x == 0 && number != 2
+  end
+  true
+end
+
+circular_primes=[]
+
+(2..1000000).each do |number|
+  if circular_numbers(number).map{|x| prime?(x)}.all?{|x| x==true}
+    circular_primes<<number
+  end
+end
+
 
